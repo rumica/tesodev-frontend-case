@@ -4,6 +4,7 @@ import AddNewRecord from '../AddNewRecord'
 import logo from '../../assets/logo.png'
 import SearchInput from '../Search/SearchInput'
 import Slider from './Slider/Slider'
+import Footer from './Footer/Footer'
 
 const MainPage = () => {
   return (
@@ -21,10 +22,13 @@ const MainPage = () => {
             </div>
         </div>
         <div className="slider-field">
+            <div>
+                <h1>Top News</h1>
+            </div>
             <Slider />
         </div>
         <div className="footer-field">
-            footer
+            <Footer />
         </div>
     </div>
   )
