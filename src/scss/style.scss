@@ -184,3 +184,85 @@
         }
     }
 }
+
+// List Page Styles
+
+.list-page-container {
+    .list-page-header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 117px;
+        margin-bottom: 81px;
+        img {
+            margin-left: 37px;
+            width: 149px;
+            height: 63px;
+            margin-right: 35px;
+        }
+        .search-form {
+            input {
+                width: 509px;
+                height: 46px;
+                border-radius: 8px;
+                border: 1px solid rgba(0, 0, 0, 1);
+                outline: none;
+                margin-right: 11px;
+            }
+            button {
+                font-family: 'Roboto', sans-serif;
+                font-size: 18px;
+                font-weight: 900;
+                width: 138px;
+                height: 46px;
+                background-color: rgba(32, 64, 128, 1);
+                color: #ffff;
+                border-radius: 12px;
+                border: none;
+                cursor: pointer;
+            }
+            .add-new-record-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Roboto', sans-serif;
+                font-size: 18px;
+                font-weight: 900;
+                width: 216px;
+                height: 46px;
+                background-color: rgba(32, 64, 128, 1);
+                color: #ffff;
+                border-radius: 12px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+    .list-items-container {
+        .container {
+            .list-container {
+                margin: 0 auto;
+                width: 80%;
+                padding: 23px 28px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-family: 'Inter', sans-serif;
+                margin-bottom: 30px;
+                border-bottom: 1px solid rgba(126, 126, 126, 1);
+                .list-info {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 50%;
+                    .list-title {
+                        margin-left: 15px;
+                        h2 {
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
