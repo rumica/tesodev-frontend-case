@@ -1,18 +1,28 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../../scss/style.scss'
 
 const SearchInput = ({ items, filteredItems, filteredText, setFilteredText }) => {
 
-  console.log(filteredText)
+  let navigate = useNavigate()
+  
+  const handleClick = (e) => {
+    navigate('/list-page')
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
 
   return (
-    <form className='search-form'>
-        <input 
+    <form onSubmit={handleSubmit} className='search-form'>
+        <input
+        minlength={3}
         type="text" 
         value={filteredText}
         placeholder="Search"
         onChange={(e) => setFilteredText(e.target.value)}/>
-        <button>Search</button>
+        <button onClick={handleClick}>Search</button>
     </form>
   )
 }

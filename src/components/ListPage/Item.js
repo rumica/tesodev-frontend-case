@@ -1,5 +1,4 @@
 import React from 'react'
-import datas from '../../data/mockData.json'
 import ListItems from './ListItems'
 
 const Item = ({ items, setItems, filteredItems, filteredText }) => {

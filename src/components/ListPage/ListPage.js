@@ -10,7 +10,9 @@ const ListPage = ({ items, setItems, filteredItems, filteredText, setFilteredTex
   return (
     <div className="list-page-container">
       <div className="list-page-header">
-        <img src={logo} alt="" />
+        <NavLink to="/">
+          <img src={logo} alt="" />
+        </NavLink>
         <div className="search-field">
           <SearchInput items={items} filteredItems={filteredItems} setFilteredText={setFilteredText}/>
         </div>

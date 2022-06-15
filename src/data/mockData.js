@@ -1,5 +1,5 @@
-{
-	"data": [
+
+	export const datas = [
 		{
 			"fullname": "Hyacinth Vincent",
 			"company": "Duis Corporation",
@@ -49,4 +49,3 @@
 			"city": "Sevastopol"
 		}
 	]
-}

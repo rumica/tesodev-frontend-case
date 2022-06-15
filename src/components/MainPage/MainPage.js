@@ -3,10 +3,12 @@ import '../../scss/style.scss'
 import AddNewRecord from '../AddNewRecord'
 import logo from '../../assets/logo.png'
 import SearchInput from '../Search/SearchInput'
+import ListModal from './ListModal'
 import Slider from './Slider/Slider'
 import Footer from './Footer/Footer'
 
-const MainPage = ({ filteredItems, filteredText, setFilteredText }) => {
+
+const MainPage = ({ setItems, filteredItems, filteredText, setFilteredText }) => {
   return (
     <div className="main-container">
         <div className="navbar">
@@ -18,7 +20,8 @@ const MainPage = ({ filteredItems, filteredText, setFilteredText }) => {
             </div>
             <div className="search-field">
                 <p>Find in records</p>
-                <SearchInput filteredText={filteredText} filteredItems={filteredItems} setFilteredText={setFilteredText}/>
+                <SearchInput setItems={setItems} filteredText={filteredText} filteredItems={filteredItems} setFilteredText={setFilteredText}/>
+                <ListModal filteredItems={filteredItems}/>
             </div>
         </div>
         <div className="slider-field">
