@@ -2,10 +2,10 @@ import React from 'react'
 import datas from '../../data/mockData.json'
 import ListItems from './ListItems'
 
-const Item = () => {
+const Item = ({ items, setItems, filteredItems, filteredText }) => {
   return (
     <div>
-        <ListItems />
+        <ListItems items={items} setItems={setItems} filteredItems={filteredItems} filteredText={filteredText}/>
     </div>
   )
 }

@@ -1,15 +1,14 @@
-import React from 'react'
-import datas from '../../data/mockData.json'
+import React, { useState } from 'react'
 import '../../scss/style.scss'
 import { Icon } from '../../Icons'
 
 
-const ListItems = () => {
+const ListItems = ({ items, setItems, filteredItems }) => {
 
   return (
     <div className="container">
-       {datas.data.map((item) => (
-         <div className="list-container">
+       {filteredItems.map((item, index) => (
+         <div key={index} className="list-container">
            <div className="list-info">
              <Icon name="location" />
              <div className="list-title">

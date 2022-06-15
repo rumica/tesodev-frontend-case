@@ -6,7 +6,7 @@ import SearchInput from '../Search/SearchInput'
 import Slider from './Slider/Slider'
 import Footer from './Footer/Footer'
 
-const MainPage = () => {
+const MainPage = ({ filteredItems, filteredText, setFilteredText }) => {
   return (
     <div className="main-container">
         <div className="navbar">
@@ -18,7 +18,7 @@ const MainPage = () => {
             </div>
             <div className="search-field">
                 <p>Find in records</p>
-                <SearchInput />
+                <SearchInput filteredText={filteredText} filteredItems={filteredItems} setFilteredText={setFilteredText}/>
             </div>
         </div>
         <div className="slider-field">
