@@ -8,7 +8,7 @@ import Slider from './Slider/Slider'
 import Footer from './Footer/Footer'
 
 
-const MainPage = ({ setItems, filteredItems, filteredText, setFilteredText }) => {
+const MainPage = ({ page, setItems, filteredItems, filteredText, setFilteredText }) => {
   return (
     <div className="main-container">
         <div className="navbar">
@@ -21,7 +21,9 @@ const MainPage = ({ setItems, filteredItems, filteredText, setFilteredText }) =>
             <div className="search-field">
                 <p>Find in records</p>
                 <SearchInput setItems={setItems} filteredText={filteredText} filteredItems={filteredItems} setFilteredText={setFilteredText}/>
-                <ListModal filteredItems={filteredItems}/>
+                {
+                    filteredText && <ListModal page={page} filteredItems={filteredItems} /> 
+                }
             </div>
         </div>
         <div className="slider-field">

@@ -1,22 +1,63 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-const Form = () => {
+const Form = ({ items, setItems }) => {
+ 
+  const [form, setForm] = useState({ fullname: "", company: "", country: "", city: "", email: "" })
+
+  useEffect(() => {
+    setForm({ fullname: "", company: "", country: "", city: "", email: "" })
+}, [items])
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if(form.company === '' || form.country === '' ){
+        return false
+    }
     
+    setItems((prev) => [...prev, form])
+  }
+
+  const onChangeInput = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value})
+  }
+
   return (
-    <form>
-    <label>Name Surname</label>
-    <input type="text" placeholder="Enter name and surname"/>
+    <form onSubmit={handleSubmit}>
+      <label>Name Surname</label>
+      <input 
+      type="text" 
+      name="fullname" 
+      value={form.fullname}
+      onChange={onChangeInput}
+      placeholder="Enter name and surname"
+      />
 
-    <label>Country</label>
-    <input type="text" placeholder="Enter a country"/>
+      <label>Country</label>
+      <input 
+      type="text"
+      name="country" 
+      value={form.country}
+      onChange={onChangeInput} 
+      placeholder="Enter a country"/>
 
-    <label>Name Surname</label>
-    <input type="text" placeholder="Enter a city"/>
+      <label>City</label>
+      <input 
+      type="text" 
+      name="city" 
+      value={form.city}
+      onChange={onChangeInput}
+      placeholder="Enter a city"/>
 
-    <label>City</label>
-    <input type="text" placeholder="Enter a e-mail (abc@xyz.com)"/>
-    <button>Add</button>
-  </form>
+      <label>Company</label>
+      <input 
+      type="text" 
+      name="company" 
+      value={form.company}
+      onChange={onChangeInput}
+      placeholder="Enter a e-mail (abc@xyz.com)"/>
+      <button>Add</button>
+    </form>
   )
 }
 

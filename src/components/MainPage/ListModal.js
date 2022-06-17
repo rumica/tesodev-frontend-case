@@ -1,19 +1,23 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../../scss/style.scss'
+import { TOTAL_ITEM } from '../../utils/constants'
 import { Icon } from '../../Icons'
 
-const ListModal = ({ filteredItems }) => {
+const ListModal = ({ page,  filteredItems }) => {
+
+  const startIndex = (page - 1) * TOTAL_ITEM
+  const selectedItems = filteredItems.slice(startIndex, startIndex + TOTAL_ITEM);
 
   let navigate = useNavigate()
 
-  const handleClick = (e) => {
+  const handleClickPage = (e) => {
     navigate('/list-page')
   }
 
   return (
     <div className="modal-container">
-       {filteredItems.map((item, index) => (
+       {selectedItems.map((item, index) => (
          <div key={index} className="list-container">
            <div className="list-info">
              <Icon name="location" />
@@ -25,7 +29,7 @@ const ListModal = ({ filteredItems }) => {
          </div>
        ))}
        <div className="button-field">
-           <button onClick={handleClick}>Show more...</button>
+           <button onClick={handleClickPage}>Show more...</button>
        </div>
     </div>
   )

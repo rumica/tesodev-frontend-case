@@ -1,10 +1,10 @@
 import React from 'react'
 import ListItems from './ListItems'
 
-const Item = ({ items, setItems, filteredItems, filteredText }) => {
+const Item = ({ page, items, setItems, filteredItems, filteredText }) => {
   return (
     <div>
-        <ListItems items={items} setItems={setItems} filteredItems={filteredItems} filteredText={filteredText}/>
+        <ListItems page={page} items={items} setItems={setItems} filteredItems={filteredItems} filteredText={filteredText}/>
     </div>
   )
 }

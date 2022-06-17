@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import '../../scss/style.scss'
-import AddNewRecord from '../AddNewRecord'
+import Pagination from '../Pagination'
 import SearchInput from '../Search/SearchInput'
 import Item from './Item'
 import logo from '../../assets/logo.png'
 
-const ListPage = ({ items, setItems, filteredItems, filteredText, setFilteredText }) => {
+const ListPage = ({ handleClick, totalPages, page, items, setItems, filteredItems, filteredText, setFilteredText }) => {
   return (
     <div className="list-page-container">
       <div className="list-page-header">
@@ -21,8 +21,9 @@ const ListPage = ({ items, setItems, filteredItems, filteredText, setFilteredTex
           </div>
       </div>
       <div className="list-items-container">
-        <Item items={items} setItems={setItems} filteredItems={filteredItems} filteredText={filteredText}/>
+        <Item page={page} items={items} setItems={setItems} filteredItems={filteredItems} filteredText={filteredText}/>
       </div>
+      <Pagination handleClick={handleClick} totalPages={totalPages}/>
     </div>
   )
 }
