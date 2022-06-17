@@ -17,7 +17,7 @@ const SearchInput = ({ items, filteredItems, filteredText, setFilteredText }) =>
   return (
     <form onSubmit={handleSubmit} className='search-form'>
         <input
-        minlength={3}
+        minLength={3}
         type="text" 
         value={filteredText}
         placeholder="Search"

@@ -5,7 +5,7 @@ import { datas } from './data/mockData'
 import AddLinkPage from './components/AddLinkPage/AddLinkPage';
 import MainPage from './components/MainPage/MainPage';
 import ListPage from './components/ListPage/ListPage';
-import { ITEM_PER_PAGE, TOTAL_ITEM } from './utils/constants';
+import { ITEM_PER_PAGE } from './utils/constants';
 
 function App() {
 
@@ -13,10 +13,6 @@ function App() {
   const [filteredText, setFilteredText] = useState([])
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(0)
-
-  useEffect(() => {
-    setTotalPages(Math.ceil(items.length / ITEM_PER_PAGE))
-  },[])
 
   const filteredItems = items.filter(item => {
     return Object.keys(item).some(key => {
@@ -27,6 +23,10 @@ function App() {
     })
   })
 
+  useEffect(() => {
+    setTotalPages(Math.ceil(items.length / ITEM_PER_PAGE))
+  },[])
+
   const handleClick = (num) => {
     setPage(num)
   }
@@ -34,7 +34,7 @@ function App() {
   return (
     <Routes>
       <Route exact path="/" element={<MainPage setItems= {setItems} page={page} filteredText={filteredText} setFilteredText={setFilteredText} filteredItems={filteredItems}/>} />
-      <Route exact path="/add-link" element={<AddLinkPage items={items} setItems={setItems}/>} />
+      <Route exact path="/add-link" element={<AddLinkPage filteredText={filteredText} setItems={setItems}/>} />
       <Route exact path="/list-page" element={<ListPage handleClick={handleClick} totalPages={totalPages} page={page} filteredText={filteredText} setFilteredText={setFilteredText} filteredItems={filteredItems} items={items} setItems={setItems}/>} />
     </Routes>
   );

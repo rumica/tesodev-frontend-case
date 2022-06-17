@@ -20,7 +20,7 @@ const ListItems = ({ page, filteredItems }) => {
                <p>{item.city}, {item.country}</p>
              </div>
            </div>
-           <div>
+           <div className="name-and-date">
              <h4>{item.fullname}</h4>
              <h4>{item.date}</h4>
            </div>

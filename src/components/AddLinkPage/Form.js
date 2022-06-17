@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react'
 
-const Form = ({ items, setItems }) => {
+const Form = ({ filteredText, setItems }) => {
  
   const [form, setForm] = useState({ fullname: "", company: "", country: "", city: "", email: "" })
 
   useEffect(() => {
     setForm({ fullname: "", company: "", country: "", city: "", email: "" })
-}, [items])
+}, [filteredText])
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-
+    
     if(form.company === '' || form.country === '' ){
         return false
     }
