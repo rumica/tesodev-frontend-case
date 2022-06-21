@@ -22,7 +22,7 @@ const MainPage = ({ page, setItems, filteredItems, filteredText, setFilteredText
                 <p>Find in records</p>
                 <SearchInput setItems={setItems} filteredText={filteredText} filteredItems={filteredItems} setFilteredText={setFilteredText}/>
                 {
-                    filteredText && <ListModal page={page} filteredItems={filteredItems} /> 
+                    filteredItems && <ListModal page={page} filteredItems={filteredItems} /> 
                 }
             </div>
         </div>

@@ -14,7 +14,7 @@ const ListPage = ({ handleClick, totalPages, page, items, setItems, filteredItem
           <img src={logo} alt="" />
         </NavLink>
         <div className="search-field">
-          <SearchInput items={items} filteredItems={filteredItems} setFilteredText={setFilteredText}/>
+          <SearchInput filteredText={filteredText} items={items} filteredItems={filteredItems} setFilteredText={setFilteredText}/>
         </div>
           <div className="search-form">
             <NavLink to="/add-link" className="add-new-record-button">Add new record</NavLink>

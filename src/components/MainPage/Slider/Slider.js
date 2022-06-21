@@ -1,14 +1,15 @@
 import React from 'react'
 import Slides from './Slides'
+import { Icon } from '../../../Icons'
 
 const Slider = () => {
   return (
     <div className="slides">
-      <button>prev</button>
+      <button><Icon name="leftArrow" /></button>
       <Slides />
       <Slides />
       <Slides />
-      <button>next</button>
+      <button><Icon name="rightArrow" /></button>
     </div>
   )
 }

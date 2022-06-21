@@ -5,14 +5,14 @@ import '../../scss/style.scss'
 import Form from './Form'
 import { Icon } from '../../Icons'
 
-const AddLinkPage = ({ filteredText, setItems }) => {
+const AddLinkPage = ({ items, filteredText, setItems }) => {
   return (
     <div className="add-link-page-container">
       <div className='add-link-page-header'>
         <img src={logo} alt="" />
         <NavLink to="/list-page" className="return"><span><Icon name="arrow"/></span> Return to List Page</NavLink>
       </div>
-      <Form filteredText={filteredText} setItems={setItems}/> 
+      <Form items={items} filteredText={filteredText} setItems={setItems}/> 
     </div>
   )
 }

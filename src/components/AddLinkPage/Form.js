@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react'
 
-const Form = ({ filteredText, setItems }) => {
+const Form = ({ items, filteredText, setItems }) => {
  
-  const [form, setForm] = useState({ fullname: "", company: "", country: "", city: "", email: "" })
+  const [form, setForm] = useState({ fullname: "", company: "", country: "", city: "", date: "" })
 
   useEffect(() => {
-    setForm({ fullname: "", company: "", country: "", city: "", email: "" })
-}, [filteredText])
+    setForm({ fullname: "", company: "", country: "", city: "", date: "" })
+}, [items])
 
   const handleSubmit = (e) => {
     
+    e.preventDefault()
     if(form.company === '' || form.country === '' ){
         return false
     }
@@ -18,43 +19,56 @@ const Form = ({ filteredText, setItems }) => {
   }
 
   const onChangeInput = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value})
+    setForm({ ...form, [e.target.name]: e.target.id === "date" ? e.target.value.replaceAll("-", "/") : e.target.value})
+    console.log(e.target)
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Name Surname</label>
+      <label htmlFor="fullname">Name Surname</label>
       <input 
-      type="text" 
+      type="text"
       name="fullname" 
+      id="fullname" 
       value={form.fullname}
       onChange={onChangeInput}
       placeholder="Enter name and surname"
       />
 
-      <label>Country</label>
+      <label htmlFor="country">Country</label>
       <input 
       type="text"
-      name="country" 
+      name="country"
+      id="country" 
       value={form.country}
       onChange={onChangeInput} 
       placeholder="Enter a country"/>
 
-      <label>City</label>
+      <label htmlFor="city">City</label>
       <input 
       type="text" 
       name="city" 
+      id="city"
       value={form.city}
       onChange={onChangeInput}
       placeholder="Enter a city"/>
 
-      <label>Company</label>
+      <label htmlFor="company">Company</label>
       <input 
       type="text" 
       name="company" 
       value={form.company}
       onChange={onChangeInput}
-      placeholder="Enter a e-mail (abc@xyz.com)"/>
+      placeholder="Enter a company"/>
+
+      <label htmlFor="date">Date</label>
+      <input 
+      type="date"
+      id="date" 
+      name="date"
+      value={form.date}
+      onChange={onChangeInput}/>
+
       <button>Add</button>
     </form>
   )
