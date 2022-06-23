@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../../scss/style.scss'
 
-const SearchInput = ({ items, filteredItems, filteredText, setFilteredText }) => {
+const SearchInput = ({ filteredText, setFilteredText }) => {
 
   let navigate = useNavigate()
   
