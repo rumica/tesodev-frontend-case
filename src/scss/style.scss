@@ -108,12 +108,11 @@
         width: 89%;
         display: flex;
         overflow: hidden;
-        background-color: rgb(255, 195, 195);
       }
     }
     .slide {
       width: 327px;
-      transform: translate(327px);
+      margin-right: 118px;
       transition-duration: 1s ease;
       h2 {
         margin-top: 12px;
@@ -123,17 +122,6 @@
       p {
         font-size: 12px;
       }
-    }
-    .active {
-        transition-duration: 1s;
-        h2 {
-          margin-top: 12px;
-          margin-bottom: 8px;
-          font-size: 16px;
-        }
-        p {
-          font-size: 12px;
-        }
     }
   }
   .footer-field {

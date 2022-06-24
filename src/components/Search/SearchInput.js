@@ -1,30 +1,30 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import '../../scss/style.scss'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "../../scss/style.scss";
 
 const SearchInput = ({ filteredText, setFilteredText }) => {
+  let navigate = useNavigate();
 
-  let navigate = useNavigate()
-  
   const handleClick = (e) => {
-    navigate('/list-page')
-  }
+    navigate("/list-page");
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+  };
 
   return (
-    <form onSubmit={handleSubmit} className='search-form'>
-        <input
+    <form onSubmit={handleSubmit} className="search-form">
+      <input
         minLength={3}
-        type="text" 
+        type="text"
         value={filteredText}
         placeholder="Search"
-        onChange={(e) => setFilteredText(e.target.value)}/>
-        <button onClick={handleClick}>Search</button>
+        onChange={(e) => setFilteredText(e.target.value)}
+      />
+      <button onClick={handleClick}>Search</button>
     </form>
-  )
-}
+  );
+};
 
-export default SearchInput
+export default SearchInput;

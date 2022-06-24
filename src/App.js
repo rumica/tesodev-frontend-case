@@ -49,8 +49,7 @@ function App() {
   return (
     <Routes>
       <Route
-        exact
-        path="/"
+        exact path="/"
         element={
           <MainPage
             setItems={setItems}
@@ -62,8 +61,7 @@ function App() {
         }
       />
       <Route
-        exact
-        path="/add-link"
+        exact path="/add-link"
         element={
           <AddLinkPage
             items={items}
@@ -73,8 +71,7 @@ function App() {
         }
       />
       <Route
-        exact
-        path="/list-page"
+        exact path="/list-page"
         element={
           <ListPage
             handleClick={handleClick}
